@@ -6,11 +6,11 @@ env/
 .env/
 
 # Database
-db.sqlite3
+# db.sqlite3
 
 # Media and Static Files
-media/
-static_root/
+# media/
+# static_root/
 
 # IDE-specific files
 .idea/
