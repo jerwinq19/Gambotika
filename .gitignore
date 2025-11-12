@@ -1,0 +1,23 @@
+# Python
+*.pyc
+__pycache__/
+venv/
+env/
+.env/
+
+# Database
+db.sqlite3
+
+# Media and Static Files
+media/
+static_root/
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Temporary files
+*~

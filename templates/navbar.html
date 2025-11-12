@@ -1,0 +1,36 @@
+<div class="navbar bg-neutral text-neutral-content px-6">
+    <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-2xl font-bold hover:bg-neutral-focus">Gambotika</a>
+    </div>
+    <div class="flex-none">
+        <ul class="menu menu-horizontal px-1 gap-2">
+            <li>
+                <a 
+                    class="btn btn-outline btn-sm hover:bg-primary hover:text-white transition-colors"
+                    href="{% url "home" %}"
+                >
+                    Home
+                </a>
+            </li>
+            <li>
+                <a 
+                    class="btn btn-outline btn-sm hover:bg-primary hover:text-white transition-colors"
+                    {% comment %} {% url "profile" user.username user.id %} {% endcomment %}
+                >
+                    Profile
+                </a>
+            </li>
+            <li>
+                <form method="post" action="{% url 'logout' %}" class="inline-flex m-0">
+                    {% csrf_token %}
+                    <button
+                        type="submit"
+                        class="btn btn-error btn-sm text-white hover:bg-red-600 transition-colors"
+                    >
+                        Logout
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>

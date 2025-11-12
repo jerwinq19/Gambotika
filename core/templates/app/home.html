@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold mb-10 text-center">Available brainrot!</h1>
+
+    <!-- Responsive flexible grid -->
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(18rem,1fr))] gap-10 justify-items-center">
+        {% for nft in nfts %}
+            <div class="card bg-base-200 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-200 w-full max-w-sm">
+                <figure class="aspect-[4/3] overflow-hidden rounded-t-2xl bg-base-300">
+                    <img
+                        src="{{ nft.nft_image.url }}"
+                        alt="{{ nft.name }}"
+                        class="w-full h-full object-cover"
+                    />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title text-lg font-semibold">{{ nft.name }}</h2>
+                    <p class="text-sm text-base-content/70">
+                        A card component has a figure, a body, and inside it, title and actions parts.
+                    </p>
+                    <div class="card-actions justify-end mt-4">
+                        <button class="btn btn-primary btn-sm">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
